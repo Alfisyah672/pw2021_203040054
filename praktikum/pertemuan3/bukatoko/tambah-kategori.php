@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BukaToko</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="asset/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
 </head>
@@ -33,18 +33,10 @@
 
     <div class="section">
         <div class="container">
-            <h3>Tambah data Produk</h3>
+            <h3>Tambah data kategori</h3>
             <div class="box">
                <form action="" method="POST">
-                   <select class="input-control" name="kategori" required>
-                    <option value="">Pilih</option>
-                    <?php
-                        $kategori = mysqli_query($conn, "SELECT * FROM tb_category ORDER BY category_id DESC");
-                        while($r = mysqli_fetch_array($kategori)){
-                    ?>
-                        <option value=""><?php echo $r['category_name'] ?></option>
-                    <?php } ?>
-                   </select>
+                   <input type="text" name="nama" placeholder="Nama Kategori" class="input-control"required>
                    <input type="submit" name="Submit" value="Submit" class="btn">
                </form>
                <?php
